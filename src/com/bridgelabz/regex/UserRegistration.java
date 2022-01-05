@@ -3,18 +3,20 @@ import java.util.regex.*;
 
 public class UserRegistration {
 	private static final String FIRST_NAME_REGEX = "^[A-Z][a-z]{2,}";
+	private static final String LAST_NAME_REGEX = "^[A-Z][a-z]{2,}";
 	public void register(UserDetails userDetail) {
-		validateUserDetails(userDetail);
-	}
-	private void validateUserDetails(UserDetails userDetail) {
-		Pattern pattern = Pattern.compile(FIRST_NAME_REGEX);
-		Matcher matcher = pattern.matcher(userDetail.getFirstName());
-		boolean isValid = matcher.matches();
-		if(isValid) {
+		boolean isFirstNameValid = validateUserDetails(FIRST_NAME_REGEX,userDetail.getFirstName());
+		boolean isLastNameValid = validateUserDetails(LAST_NAME_REGEX,userDetail.getLastName());
+		if(isFirstNameValid && isLastNameValid) {
 			System.out.println("Name is valid");
 		}
 		else {
-			System.out.println("Name is not valid");
+			System.out.println("Name is invalid");
 		}
+	}
+	private boolean validateUserDetails(String regex, String dataToBeValidated) {
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(dataToBeValidated);
+		return matcher.matches();
 	}
 }

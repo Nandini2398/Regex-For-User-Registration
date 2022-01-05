@@ -6,7 +6,9 @@ public class RegexMain {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter First-Name:");
 		String firstName = sc.next();
-		UserDetails userdetails = new UserDetails(firstName);
+		System.out.println("Enter Last-Name:");
+		String lastName = sc.next();
+		UserDetails userdetails = new UserDetails(firstName,lastName);
 		UserRegistration registration = new UserRegistration();
 		registration.register(userdetails);
 	}
