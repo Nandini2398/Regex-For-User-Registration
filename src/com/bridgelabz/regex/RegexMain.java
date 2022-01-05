@@ -12,7 +12,9 @@ public class RegexMain {
 		String email = sc.next();
 		System.out.println("Enter Phone-Number");
 		String number = sc.next();
-		UserDetails userdetails = new UserDetails(firstName,lastName,email,number);
+		System.out.println("Enter Password: ");
+		String password = sc.next();
+		UserDetails userdetails = new UserDetails(firstName,lastName,email,number,password);
 		UserRegistration registration = new UserRegistration();
 		registration.register(userdetails);
 	}
