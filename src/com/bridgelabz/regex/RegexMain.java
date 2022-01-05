@@ -10,7 +10,9 @@ public class RegexMain {
 		String lastName = sc.next();
 		System.out.println("Enter Email: ");
 		String email = sc.next();
-		UserDetails userdetails = new UserDetails(firstName,lastName,email);
+		System.out.println("Enter Phone-Number");
+		String number = sc.next();
+		UserDetails userdetails = new UserDetails(firstName,lastName,email,number);
 		UserRegistration registration = new UserRegistration();
 		registration.register(userdetails);
 	}
