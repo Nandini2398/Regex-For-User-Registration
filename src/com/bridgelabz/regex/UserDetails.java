@@ -13,4 +13,3 @@ public class UserDetails {
 		this.firstName = firstName;
 	}
 }
-
